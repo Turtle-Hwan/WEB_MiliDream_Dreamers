@@ -6,7 +6,9 @@ const app = express();
 
 function startServer() {
 	const PORT = process.env.PORT || 3000;
-
+	app.get("/", (req, res) => {
+		res.send("express on vercel");
+	});
 	loaders(app);
 
 	app.listen(PORT, (err) => {
